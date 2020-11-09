@@ -1,25 +1,23 @@
 package com.beerhouse.service;
 
+import static java.util.Arrays.asList;
 import static org.mockito.Mockito.when;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.junit4.SpringRunner;
 
+import com.beerhouse.api.resources.mappers.BeerResourceMapper;
 import com.beerhouse.domain.repository.BeerRepository;
 
 import javassist.NotFoundException;
 
+@RunWith(SpringRunner.class)
 @SpringBootTest
-@RunWith(SpringJUnit4ClassRunner.class)
 public class BeerServiceTests {
-	
-	private static final Logger LOG = LoggerFactory.getLogger(BeerServiceTests.class);
 	
 	@Autowired
 	private BeerService service;
@@ -27,10 +25,12 @@ public class BeerServiceTests {
 	@Mock
 	private BeerRepository repository;
 	
+	@Mock
+	private BeerResourceMapper mappper;
+	
 	@Test(expected = NotFoundException.class)
-	public void noRecordTestFound() throws NotFoundException {
-		LOG.info("Testing noRecordTestFound()");
-		when(repository.findAll()).thenReturn(null);
+	public void should_throw_an_exception_if_it_finds_no_record() throws NotFoundException {
+		when(repository.findAll()).thenReturn(asList());
 		service.findAll();
 	}
 

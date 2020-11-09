@@ -1,10 +1,10 @@
 package com.beerhouse.api.resources;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 import org.springframework.hateoas.ResourceSupport;
 
-import com.beerhouse.domain.Beer;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class BeerResource extends ResourceSupport {
@@ -15,16 +15,23 @@ public class BeerResource extends ResourceSupport {
     private final String alcoholContent;
     private final BigDecimal price;
     private final String category;
+    private final Boolean active;
+	private final LocalDateTime createOn;
+	private final LocalDateTime modifyOn;
     
-	public BeerResource(Beer beer) {
-		this.id = beer.getId();
-		this.name = beer.getName();
-		this.ingredients = beer.getIngredients();
-		this.alcoholContent = beer.getAlcoholContent();
-		this.price = beer.getPrice();
-		this.category = beer.getCategory();
+	public BeerResource(Long id, String name, String ingredients, String alcoholContent, BigDecimal price,
+			String category, Boolean active, LocalDateTime createOn, LocalDateTime modifyOn) {
+		this.id = id;
+		this.name = name;
+		this.ingredients = ingredients;
+		this.alcoholContent = alcoholContent;
+		this.price = price;
+		this.category = category;
+		this.active = active;
+		this.createOn = createOn;
+		this.modifyOn = modifyOn;
 	}
-	
+
 	@JsonProperty("id")
 	public Long getResourceId() {
 		return id;
@@ -48,6 +55,18 @@ public class BeerResource extends ResourceSupport {
 
 	public String getCategory() {
 		return category;
-	}  
-    
+	}
+
+	public Boolean getActive() {
+		return active;
+	}
+
+	public LocalDateTime getCreateOn() {
+		return createOn;
+	}
+
+	public LocalDateTime getModifyOn() {
+		return modifyOn;
+	}
+	
 }

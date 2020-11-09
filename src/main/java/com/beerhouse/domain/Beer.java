@@ -1,7 +1,9 @@
 package com.beerhouse.domain;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,11 +19,30 @@ public class Beer implements Identifiable<Long> {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "beer_sequence")
 	@SequenceGenerator(name = "beer_sequence", sequenceName = "ber_seq")
 	private Long id;
+	
+	@Column(length = 50, nullable = false)
 	private String name;
+	
+	@Column(length = 150, nullable = false)
 	private String ingredients;
+	
+	@Column(length = 20, name = "alcohol_content", nullable = false)
     private String alcoholContent;
+	
+	@Column(scale = 2, precision = 18, nullable = false)
     private BigDecimal price;
+	
+	@Column(length = 50, nullable = false)
     private String category;
+	
+	@Column(nullable = false)
+	private Boolean active;
+	
+	@Column(name = "create_on", nullable = false)
+	private LocalDateTime createOn;
+
+	@Column(name = "modify_on", nullable = false)
+	private LocalDateTime modifyOn;
     
 	public Long getId() {
 		return id;
@@ -70,4 +91,29 @@ public class Beer implements Identifiable<Long> {
 	public void setCategory(String category) {
 		this.category = category;
 	}
+
+	public Boolean getActive() {
+		return active;
+	}
+
+	public void setActive(Boolean active) {
+		this.active = active;
+	}
+
+	public LocalDateTime getCreateOn() {
+		return createOn;
+	}
+
+	public void setCreateOn(LocalDateTime createOn) {
+		this.createOn = createOn;
+	}
+
+	public LocalDateTime getModifyOn() {
+		return modifyOn;
+	}
+
+	public void setModifyOn(LocalDateTime modifyOn) {
+		this.modifyOn = modifyOn;
+	}
+	
 }
