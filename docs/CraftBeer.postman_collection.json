@@ -1,0 +1,182 @@
+{
+	"info": {
+		"_postman_id": "278871af-c2c2-4948-89b8-ef0074bf995d",
+		"name": "CraftBeer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:9000/beerhouse/v1/beers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9000/beerhouse/v1/beers",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"beerhouse",
+						"v1",
+						"beers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:9000/beerhouse/v1/beers",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"alcoholContent\": \"8 %\",\n  \"category\": \"PREMIUM\",\n  \"ingredients\": \"string, string, string\",\n  \"name\": \"Beer One\",\n  \"price\": 8.99\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/beerhouse/v1/beers",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"beerhouse",
+						"v1",
+						"beers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:9000/beerhouse/v1/beers",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"alcoholContent\": \"8 %\",\n  \"category\": \"PREMIUM\",\n  \"ingredients\": \"string, string, string\",\n  \"name\": \"Beer One\",\n  \"price\": null\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/beerhouse/v1/beers",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"beerhouse",
+						"v1",
+						"beers"
+					]
+				},
+				"description": "invalid request"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:9000/beerhouse/v1/beers/50",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9000/beerhouse/v1/beers/50",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"beerhouse",
+						"v1",
+						"beers",
+						"50"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:9000/beerhouse/v1/beers/50",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"alcoholContent\": \"8 %\",\n  \"category\": \"PREMIUM\",\n  \"ingredients\": \"string, string, string\",\n  \"name\": \"Beer Master\",\n  \"price\": 10.88\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/beerhouse/v1/beers/50",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"beerhouse",
+						"v1",
+						"beers",
+						"50"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:9000/beerhouse/v1/beers/50",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:9000/beerhouse/v1/beers/50",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"beerhouse",
+						"v1",
+						"beers",
+						"50"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:9000/beerhouse/v1/beers/50",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "localhost:9000/beerhouse/v1/beers/50",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"beerhouse",
+						"v1",
+						"beers",
+						"50"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

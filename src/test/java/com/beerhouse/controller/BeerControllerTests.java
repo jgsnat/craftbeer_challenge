@@ -44,8 +44,7 @@ public class BeerControllerTests {
 	@Test
 	public void must_return_status_200_if_it_finds_any_record() throws Exception {
 		List<Beer> beers = BeerBuilder.getListBeer(1);
-		List<BeerResource> resources = BeerResourceBuilder.getListBeerResource(beers);
-		when(service.findAll()).thenReturn(resources);
+		when(service.findAll()).thenReturn(BeerResourceBuilder.getListBeerResource(beers));
 	 
 	    this.mockMvc.perform(get(URI_BASE)
 	    	.contentType(MediaType.APPLICATION_JSON))
