@@ -81,3 +81,9 @@ Para implementar estas APIs você dever seguir a especificação do swagger que 
 
 ### [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/).
 ### [Accessing Data with JPA](https://spring.io/guides/gs/accessing-data-jpa/).
+
+Collection do Postman:
+    craftbeer
+    |
+    |docs
+    |    |___CraftBeer.postman_collection.json
